@@ -61,7 +61,7 @@
 	<repositories>
 		<repository>
 			<id>ros2_java_maven_repo</id>
-			<url>https://raw.github.com/wmlynar/ros2_java_maven_repo/</url>
+			<url>https://raw.github.com/wmlynar/ros2_java_maven_repo/master/</url>
 		</repository>
 	</repositories>
 </project>
