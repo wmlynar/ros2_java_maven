@@ -12,7 +12,7 @@ public class Main {
         long contextHandle = RCLJava.rclJavaInit(args);
 
         // Let's create a Node
-        Node node = RCLJava.createNode("minimal_publisher", contextHandle);
+        Node node = RCLJava.createNode("minimal_publisher", args, true, contextHandle);
 
         // Publishers are type safe, make sure to pass the message type
         Publisher<std_msgs.msg.String> publisher =
