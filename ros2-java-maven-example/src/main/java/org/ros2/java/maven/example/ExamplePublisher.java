@@ -8,7 +8,7 @@ import org.ros2.rcljava.publisher.Publisher;
 public class ExamplePublisher {
 
 	public static void main(String[] args) throws Exception {
-		Ros2JavaLibraries.installLibraryLoader();
+		Ros2JavaLibraries.unpack();
 		long contextHandle = RCLJava.rclJavaInit(args);
 
 		// Let's create a Node
