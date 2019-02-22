@@ -38,7 +38,7 @@
 					<archive>
 						<manifest>
 							<mainClass>
-								org.ros2.java.maven.example.Main
+								org.ros2.java.maven.example.ExamplePublisher
 							</mainClass>
 						</manifest>
 					</archive>
