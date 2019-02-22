@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=0.0.20190217-SNAPSHOT
+VERSION=0.0.20190222-SNAPSHOT
 
 # install rcljava and rcljava_common libraries
 
