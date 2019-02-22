@@ -10,14 +10,19 @@
 	<artifactId>ros2-java-maven</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>org.reflections</groupId>
-			<artifactId>reflections</artifactId>
-			<version>0.9.11</version>
+			<groupId>org.ros2.java</groupId>
+			<artifactId>rcljava_common</artifactId>
+			<version>0.0.20190217-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.scijava</groupId>
 			<artifactId>native-lib-loader</artifactId>
 			<version>2.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.11</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>

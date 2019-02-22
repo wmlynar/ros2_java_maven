@@ -10,6 +10,8 @@ import java.util.Set;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
+import org.ros2.rcljava.common.JNIUtils;
+import org.scijava.nativelib.NativeLoader;
 
 import com.google.common.base.Predicate;
 
@@ -17,6 +19,16 @@ public class Ros2JavaLibraries {
 
     private static final String TMP_FOLDER_NAME = "ros2_java_libs";
 
+    public static void installLibraryLoader() {
+    	JNIUtils.setLibraryLoader(libname -> {
+			try {
+				NativeLoader.loadLibrary(libname);
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+		});
+    }
+    
     public static String unpack() throws Exception {
         Set<String> fileNames = getJniLibraryNames();
 

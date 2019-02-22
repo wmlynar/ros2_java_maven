@@ -12,7 +12,7 @@ public class ExampleSubscriber {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Ros2JavaLibraries.unpack();
+		Ros2JavaLibraries.installLibraryLoader();
 		long contextHandle = RCLJava.rclJavaInit(args);
 
 		// Let's create a Node
