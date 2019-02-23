@@ -9,6 +9,12 @@
 	</parent>
 	<artifactId>ros2-java-maven</artifactId>
 	<dependencies>
+		<!-- Required by rcljava (HashCodeBuilder and EqualsBuilder) -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.ros2.java</groupId>
 			<artifactId>rcljava_common</artifactId>
