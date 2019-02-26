@@ -43,6 +43,10 @@ public class Ros2JavaLibraries {
 		String temporaryDiretcoryName = temporaryDiretcoryFile.getAbsolutePath();
 
 		if (skipUnpackingWhenFolderExists && temporaryDiretcoryFile.exists()) {
+			
+			System.out.println("\nPlease add following line to your .bashrc\n" + "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"
+					+ temporaryDiretcoryName + "\n");
+			
 			return;
 		}
 
@@ -55,7 +59,7 @@ public class Ros2JavaLibraries {
 		tmp.renameTo(temporaryDiretcoryFile);
 
 		System.out.println("\nCopied ros2_java libraries to: " + temporaryDiretcoryName + "\n"
-				+ "Please add to following line to your .bashrc\n" + "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"
+				+ "Please add following line to your .bashrc\n" + "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"
 				+ temporaryDiretcoryName + "\n");
 	}
 
