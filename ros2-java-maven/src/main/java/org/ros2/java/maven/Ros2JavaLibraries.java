@@ -32,17 +32,19 @@ public class Ros2JavaLibraries {
 			}
 		});
 	}
-
+	
 	public static void unpack() throws Exception {
+		unpack(false);
+	}
+
+	public static void unpack(boolean skipUnpackingWhenFolderExists) throws Exception {
 		String tempDir = System.getProperty("java.io.tmpdir");
 		File temporaryDiretcoryFile = new File(tempDir, TMP_FOLDER_NAME);
 		String temporaryDiretcoryName = temporaryDiretcoryFile.getAbsolutePath();
 
-		// TODO: check if this should not be uncommented
-		// for now we always rename the temp folder into library load folder
-		// if (temporaryDiretcoryFile.exists()) {
-		// return;
-		// }
+		if (skipUnpackingWhenFolderExists && temporaryDiretcoryFile.exists()) {
+			return;
+		}
 
 		File tmp = Files.createTempDirectory(new File(tempDir).toPath(), TMP_FOLDER_NAME + "_").toFile();
 
