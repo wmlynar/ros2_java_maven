@@ -15,22 +15,22 @@ Please add following dependencies to your maven project
         <dependency>
             <groupId>org.ros2.java</groupId>
             <artifactId>ros2-java-maven</artifactId>
-            <version>0.0.20190217-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.ros2.java</groupId>
             <artifactId>rcljava</artifactId>
-            <version>0.0.20190217-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.ros2.java</groupId>
             <artifactId>rcljava_common</artifactId>
-            <version>0.0.20190217-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.ros2.java</groupId>
             <artifactId>std_msgs_messages</artifactId>
-            <version>0.0.20190217-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 ```
@@ -41,7 +41,7 @@ as well as add maven repository hosted on github to be able to download those de
     <repositories>
         <repository>
             <id>ros2_java_maven_repo</id>
-            <url>https://raw.github.com/wmlynar/ros2_java_maven_repo/</url>
+            <url>https://raw.github.com/wmlynar/ros2_java_maven_repo/master/</url>
         </repository>
     </repositories>
 ```
@@ -52,7 +52,7 @@ Build and run the example
 git clone https://github.com/wmlynar/ros2_java_maven
 cd ros2_java_maven/ros2-java-maven-example
 mvn install
-java -jar target/ros2-java-maven-example-0.0.20190217-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/ros2-java-maven-example-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 You should see on the screen the information that you need to add folder
@@ -119,7 +119,8 @@ Step 3. Install ros2_java_maven to your local maven repository
 --------------------------------------------------------------
 
 ```
-./install.sh
+./install_jars.sh
+./install_maven.sh
 ```
 
 Step 4. Add LD_LIBRARY_PATH to your .bashrc
@@ -145,7 +146,7 @@ cd ros2_java_maven_repo
 mkdir -p ./org/ros2/java/
 cp -r ~/.m2/repository/org/ros2/java/* ./org/ros2/java/
 git add *
-git commit -m"0.0.20190217-SNAPSHOT"
+git commit -m"0.0.1-SNAPSHOT"
 git push
 ```
 
