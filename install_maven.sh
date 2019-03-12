@@ -5,7 +5,7 @@ mvn install
 cd ../ros2_java_maven_example
 mvn install
 
-cd ../ros2_java_di_example
+cd ../ros2_java_di
 mvn install
 
 cd ../ros2_java_di_example
