@@ -11,12 +11,12 @@ public class OsVersion {
 	public static String getOsName() {
 		String name = System.getProperty("os.name");
 		if("Linux".equals(name)) {
-			return getUbuntuName();
+			return getLinuxName();
 		}
 		return "";
 	}
 
-	public static String getUbuntuName() {
+	public static String getLinuxName() {
 		try {
 			File file = new File("/etc");
 			File[] list = file.listFiles(new FilenameFilter() {
@@ -29,8 +29,8 @@ public class OsVersion {
 				    while (s.hasNext()) {
 				    	String str = s.nextLine();
 				    	//System.out.println(str);
-				    	if(str.startsWith("UBUNTU_CODENAME=")) {
-				    		return str.substring(16);
+				    	if(str.startsWith("VERSION_CODENAME=")) {
+				    		return str.substring(17);
 				    	}
 				    }
 				}
@@ -42,7 +42,7 @@ public class OsVersion {
 	}
 	
 	public static String getFileNameFromPath(String path) {
-		int index = path.lastIndexOf("/");
+		int index = path.lastIndexOf('/');
 		return path.substring(index + 1);		
 	}
 
