@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.ros2.java</groupId>
-	<version>0.0.20190222-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<artifactId>ros2-java-maven</artifactId>
         <properties>
                 <maven.compiler.source>1.8</maven.compiler.source>
@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>org.ros2.java</groupId>
 			<artifactId>rcljava_common</artifactId>
-			<version>0.0.20190222-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.scijava</groupId>

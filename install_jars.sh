@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=0.0.20190222-SNAPSHOT
+VERSION=0.0.1-SNAPSHOT
 
 # install rcljava and rcljava_common libraries
 
@@ -18,6 +18,4 @@ do
   mvn install:install-file -Dfile="$file" -DgroupId=org.ros2.java -DartifactId="$(basename ${file%.*})" -Dversion=$VERSION -Dpackaging=jar
 done
 
-# install ros2-java-maven
 
-mvn install
