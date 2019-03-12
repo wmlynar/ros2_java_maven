@@ -32,7 +32,7 @@ public class Ros2JavaLibraries {
 			}
 		});
 	}
-	
+
 	public static void unpack() throws Exception {
 		unpack(false);
 	}
@@ -43,10 +43,10 @@ public class Ros2JavaLibraries {
 		String temporaryDiretcoryName = temporaryDiretcoryFile.getAbsolutePath();
 
 		if (skipUnpackingWhenFolderExists && temporaryDiretcoryFile.exists()) {
-			
-			System.out.println("\nPlease add following line to your .bashrc\n" + "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"
-					+ temporaryDiretcoryName + "\n");
-			
+
+			System.out.println("\nPlease add following line to your .bashrc\n"
+					+ "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:" + temporaryDiretcoryName + "\n");
+
 			return;
 		}
 
@@ -64,14 +64,16 @@ public class Ros2JavaLibraries {
 	}
 
 	private static Set<String> getJniLibraryNames() {
-		return new Reflections("lib*", new ResourcesScanner()).getResources(Pattern.compile("lib.*so.*"));
+		String prefix = OsVersion.getOsName() + "/lib*";
+		return new Reflections(prefix, new ResourcesScanner()).getResources(Pattern.compile("lib.*so.*"));
 	}
 
 	private static void copyJniLibrariesToTemporaryDirectory(String temporaryDiretcoryName, Set<String> fileNames)
 			throws Exception {
 		Ros2JavaLibraries object = new Ros2JavaLibraries();
 		for (String fileName : fileNames) {
-			exportResource(temporaryDiretcoryName + "/" + fileName, object.getResourceAsStream(fileName));
+			exportResource(temporaryDiretcoryName + "/" + OsVersion.getFileNameFromPath(fileName),
+					object.getResourceAsStream(fileName));
 		}
 	}
 
@@ -100,7 +102,9 @@ public class Ros2JavaLibraries {
 				stream.close();
 			} catch (Exception e) {
 			}
-			resStreamOut.close();
+			if (resStreamOut != null) {
+				resStreamOut.close();
+			}
 		}
 	}
 }
