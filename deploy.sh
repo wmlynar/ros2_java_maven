@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=0.0.20190217-SNAPSHOT
+VERSION=0.0.1-SNAPSHOT
 REPOSITORY_ID=XXXX
 REPOSITORY_URL=https://nexus.YYYY/repository/maven-snapshots/
 
